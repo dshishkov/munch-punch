@@ -1,0 +1,43 @@
+{
+  "name": "munch-punch",
+  "version": "0.0.1",
+  "description": "Testing stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "cd api && npm run lint",
+    "lint-fix": "cd api && npm run lint -- --fix",
+    "fmt": "prettier --ignore-path coverage --write '{api,web}/**/{*.js,*.mjml}'",
+    "fix": "npm run fmt && npm run lint-fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshishkov/munch-punch.git"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "Dimitar Shishkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dshishkov/munch-punch/issues"
+  },
+  "homepage": "https://github.com/dshishkov/munch-punch#readme",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "prettier": "^2.0.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
