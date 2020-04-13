@@ -12,7 +12,9 @@
     "fix": "npm run fmt && npm run lint-fix",
     "build": "cd web && npm run build",
     "start": "npm run build && cd api && npm start",
-    "install": "cd api && npm install"
+    "install-web": "cd web && npm install",
+    "install-api": "cd api && npm install",
+    "install": "npm run install-web && npm run install-api"
   },
   "repository": {
     "type": "git",
