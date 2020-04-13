@@ -10,7 +10,8 @@
     "lint-fix": "cd api && npm run lint -- --fix",
     "fmt": "prettier --ignore-path coverage --write '{api,web}/**/{*.js,*.mjml}'",
     "fix": "npm run fmt && npm run lint-fix",
-    "start": "cd api && npm start",
+    "build": "cd web && npm run build",
+    "start": "npm run build && cd api && npm start",
     "install": "cd api && npm install"
   },
   "repository": {
