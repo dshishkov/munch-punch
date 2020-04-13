@@ -1,9 +1,9 @@
-let { authenticate } = require('@feathersjs/authentication').hooks;
+let { authenticate } = require('@feathersjs/authentication').hooks
 
 let {
   hashPassword,
   protect,
-} = require('@feathersjs/authentication-local').hooks;
+} = require('@feathersjs/authentication-local').hooks
 
 module.exports = {
   before: {
@@ -39,4 +39,4 @@ module.exports = {
     patch: [],
     remove: [],
   },
-};
+}

@@ -1,3 +1,3 @@
-let { Service } = require('feathers-memory');
+let { Service } = require('feathers-memory')
 
-exports.User = class User extends Service {};
+exports.User = class User extends Service {}
