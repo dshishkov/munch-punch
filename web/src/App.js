@@ -33,7 +33,6 @@ let Form = () => {
       />
       <FormField
         name="lastName"
-        placeholder="Smith"
         as={<TextInput disabled={isSubmitting} plain />}
         placeholder="Smith"
         rules={{
