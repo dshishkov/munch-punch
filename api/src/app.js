@@ -1,5 +1,4 @@
 let path = require('path')
-let favicon = require('serve-favicon')
 let compress = require('compression')
 let helmet = require('helmet')
 let cors = require('cors')
@@ -26,7 +25,6 @@ app.use(cors())
 app.use(compress())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')))
 // Host the public folder
 app.use('/', express.static(app.get('public')))
 
@@ -39,6 +37,11 @@ app.configure(authentication)
 app.configure(services)
 // Set up event channels (see channels.js)
 app.configure(channels)
+
+// Route all other routes to index.html
+app.get('*', function (req, resp) {
+  resp.sendFile(path.resolve(app.get('public'), 'index.html'))
+})
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound())

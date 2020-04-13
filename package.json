@@ -4,6 +4,7 @@
   "description": "Testing stuff",
   "main": "index.js",
   "scripts": {
+    "start-dev": "concurrently --kill-others-on-fail \"cd api && nodemon --exec npm start\" \"cd web && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "cd api && npm run lint",
     "lint-fix": "cd api && npm run lint -- --fix",
@@ -40,6 +41,7 @@
     ]
   },
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3"
   }
 }

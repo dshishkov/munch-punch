@@ -1,7 +1,7 @@
 {
   "host": "localhost",
-  "port": 3030,
-  "public": "../public/",
+  "port": 1337,
+  "public": "../../web/build",
   "paginate": {
     "default": 10,
     "max": 50
