@@ -24,9 +24,8 @@ let Form = () => {
     <form>
       <FormField
         name="email"
-        s
-        placeholder="asmith@matrix.com"
         as={<TextInput disabled={isSubmitting} plain />}
+        placeholder="asmith@matrix.com"
         rules={{
           required: 'Please provide email',
         }}
