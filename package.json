@@ -11,6 +11,7 @@
     "fmt": "prettier --ignore-path coverage --write '{api,web}/**/{*.js,*.mjml}'",
     "fix": "npm run fmt && npm run lint-fix",
     "start": "npm run build && cd api && npm start",
+    "build": "cd web && npm run build",
     "install-web": "cd web && npm install",
     "install-api": "cd api && npm install",
     "install": "npm run install-web && npm run install-api"
