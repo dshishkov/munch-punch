@@ -17,10 +17,12 @@
     "styled-components": ">= 5.X"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "EXTEND_ESLINT=true react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "CI=true SKIP_PREFLIGHT_CHECK=true react-scripts test --env=jsdom",
+    "lint": "eslint src/",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -13,7 +13,7 @@ let Form = () => {
   let { dirty, touched, isSubmitting } = formState
   let onSubmit = async (data) => {
     if (dirty) {
-      await sleep(1000)
+      await sleep(2000)
       console.log(touched)
       reset(data)
     } else {

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "concurrently --kill-others-on-fail \"cd api && nodemon --exec npm start\" \"cd web && npm start\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "cd api && npm run lint",
-    "lint-fix": "cd api && npm run lint -- --fix",
+    "test": "concurrently --kill-others-on-fail \"cd api && npm test\" \"cd web && npm test\"",
+    "lint": "concurrently \"cd api && npm run lint\" \"cd web && npm run lint\"",
+    "lint-fix": "concurrently \"cd web && npm run lint -- --fix\" \"cd api && npm run lint -- --fix\"",
     "fmt": "prettier --ignore-path coverage --write '{api,web}/**/{*.js,*.mjml}'",
     "fix": "npm run fmt && npm run lint-fix",
     "start": "npm run build && cd api && npm start",
@@ -29,8 +29,12 @@
   },
   "homepage": "https://github.com/dshishkov/munch-punch#readme",
   "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "esm": "^3.2.25",
-    "prettier": "^2.0.4"
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5"
   },
   "prettier": {
     "semi": false,
@@ -44,6 +48,6 @@
   },
   "dependencies": {
     "concurrently": "^5.1.0",
-    "nodemon": "^2.0.3"
+    "eslint-plugin-jsx-a11y": "^6.2.3"
   }
 }
