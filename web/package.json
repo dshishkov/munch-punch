@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "EXTEND_ESLINT=true react-scripts start",
-    "build": "react-scripts build",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "CI=true SKIP_PREFLIGHT_CHECK=true react-scripts test --env=jsdom",
     "lint": "eslint src/",
     "eject": "react-scripts eject",
