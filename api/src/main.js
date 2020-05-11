@@ -5,6 +5,8 @@ import app from './app'
 let port = app.get('port')
 let server = app.listen(port)
 
+logger.info(`API port is ${port}`)
+
 process.on('unhandledRejection', (reason, p) =>
   logger.error('Unhandled Rejection at: Promise ', p, reason)
 )
