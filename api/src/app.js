@@ -1,19 +1,16 @@
-let path = require('path')
-let compress = require('compression')
-let helmet = require('helmet')
-let cors = require('cors')
-let logger = require('./logger')
-
-let feathers = require('@feathersjs/feathers')
-let configuration = require('@feathersjs/configuration')
-let express = require('@feathersjs/express')
-let socketio = require('@feathersjs/socketio')
-
-let services = require('./services')
-let appHooks = require('./app.hooks')
-let channels = require('./channels')
-
-let authentication = require('./authentication')
+import path from 'path'
+import compress from 'compression'
+import helmet from 'helmet'
+import cors from 'cors'
+import logger from './logger'
+import feathers from '@feathersjs/feathers'
+import configuration from '@feathersjs/configuration'
+import express from '@feathersjs/express'
+import socketio from '@feathersjs/socketio'
+import services from './services'
+import appHooks from './app.hooks'
+import channels from './channels'
+import authentication from './authentication'
 
 let app = express(feathers())
 
@@ -49,4 +46,4 @@ app.use(express.errorHandler({ logger }))
 
 app.hooks(appHooks)
 
-module.exports = app
+export default app

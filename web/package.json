@@ -17,7 +17,7 @@
     "styled-components": ">= 5.X"
   },
   "scripts": {
-    "start": "EXTEND_ESLINT=true react-scripts start",
+    "start": "EXTEND_ESLINT=true SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "CI=true SKIP_PREFLIGHT_CHECK=true react-scripts test --env=jsdom",
     "lint": "eslint src/",

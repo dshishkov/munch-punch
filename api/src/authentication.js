@@ -1,11 +1,8 @@
-let {
-  AuthenticationService,
-  JWTStrategy,
-} = require('@feathersjs/authentication')
-let { LocalStrategy } = require('@feathersjs/authentication-local')
-let { expressOauth } = require('@feathersjs/authentication-oauth')
+import { AuthenticationService, JWTStrategy } from '@feathersjs/authentication'
+import { LocalStrategy } from '@feathersjs/authentication-local'
+import { expressOauth } from '@feathersjs/authentication-oauth'
 
-module.exports = (app) => {
+export default app => {
   let authentication = new AuthenticationService(app)
 
   authentication.register('jwt', new JWTStrategy())

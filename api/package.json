@@ -57,6 +57,19 @@
     "axios": "^0.19.2",
     "eslint": "^6.8.0",
     "jest": "^25.3.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "@babel/preset-env": "^7.9.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
   }
 }

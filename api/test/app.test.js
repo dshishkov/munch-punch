@@ -1,9 +1,9 @@
-const axios = require('axios')
-const url = require('url')
-const app = require('../src/app')
+import axios from 'axios'
+import url from 'url'
+import app from '../src/app'
 
 const port = app.get('port') || 8998
-const getUrl = (pathname) =>
+const getUrl = pathname =>
   url.format({
     hostname: app.get('host') || 'localhost',
     protocol: 'http',
@@ -14,12 +14,12 @@ const getUrl = (pathname) =>
 describe('Feathers application tests (with jest)', () => {
   let server
 
-  beforeAll((done) => {
+  beforeAll(done => {
     server = app.listen(port)
     server.once('listening', () => done())
   })
 
-  afterAll((done) => {
+  afterAll(done => {
     server.close(done)
   })
 

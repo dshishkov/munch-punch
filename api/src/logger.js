@@ -1,4 +1,4 @@
-let { createLogger, format, transports } = require('winston')
+import { createLogger, format, transports } from 'winston'
 
 // Configure the Winston logger. For the complete documentation see https://github.com/winstonjs/winston
 let logger = createLogger({
@@ -8,4 +8,4 @@ let logger = createLogger({
   transports: [new transports.Console()],
 })
 
-module.exports = logger
+export default logger
